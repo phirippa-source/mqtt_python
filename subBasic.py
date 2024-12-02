@@ -2,7 +2,7 @@ import paho.mqtt.client as mqtt
 
 def on_connect(clinet, userdata, flag, rc):
     print('Connect with result code : ' + str(rc))
-    clinet.subscribe('temp')
+    clinet.subscribe('<topic>')
 
 def on_message(client, userdata, msg):
     print(msg.topic + ':' + str(msg.payload))
