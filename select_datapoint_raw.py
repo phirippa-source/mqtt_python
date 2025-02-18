@@ -1,6 +1,6 @@
 from influxdb import InfluxDBClient
 client = InfluxDBClient(  host='localhost',
-                          port='8086',
+                          port=8086,
                           username='ship',
                           password='1234',
                           database='dbData')
