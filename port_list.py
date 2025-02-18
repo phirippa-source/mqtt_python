@@ -2,9 +2,9 @@
 # 우분투에서 모듈 설치 후 사용
 # $ sudo apt install python3-serial
 
-import serial.tools.list_ports as ser_port_list
+import serial.tools.list_ports as serial_port_list
 
-ports = ser_port_list.comports()
+ports = serial_port_list.comports()
 
 for port in ports:
   print(port)
