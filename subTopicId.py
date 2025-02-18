@@ -8,7 +8,7 @@ def on_message(client, userdata, msg):
     print(msg.topic + ':' + str(msg.payload))
 
 client = mqtt.Client()
-client.username_pw_set(username='mqtt_ship', password='1234')
+client.username_pw_set(username='ship', password='1234')
 client.on_connect = on_connect
 client.on_message = on_message
 
