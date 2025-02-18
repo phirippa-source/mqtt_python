@@ -5,12 +5,12 @@ client =  InfluxDBClient(
                 port = 8086,
                 username = 'ship',
                 password = '1234',
-                database = 'dbSensorData')
+                database = 'dbData')
 
 json_body = [
                 {
                     "measurement" : "temperature", 
-                    "tags":{"Location":"Indoor"},
+                    "tags":{"Location":"Outdoor"},
                     "fields":{"Temp":0.0}
                 }
             ]
