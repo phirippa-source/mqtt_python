@@ -5,13 +5,13 @@ import paho.mqtt.client as mqtt
 client = mqtt.Client()
 client.username_pw_set(username='ship', password='1234')
 ser = serial.Serial(port='PORT', baudrate=9600)
-ser.readline()
 client.connect('localhost', 1883, 60)
+ser.readline()
 
 while True:
   line = ser.readline().decode('utf-8')
   try:
-    client.publish('MyOffice/Indoor/Sensors', line[:-1])
-    print(line[:-1])
+    client.publish('sensors', line[:-1])
+    print('Topic:"sensors", Payload:', line[:-1])
   except:
     print('Error!')
