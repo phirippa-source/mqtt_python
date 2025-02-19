@@ -1,7 +1,11 @@
 from influxdb import InfluxDBClient
 import paho.mqtt.client as mqtt
 
-dbClient =  InfluxDBClient(host='localhost', port=8086, username='ship', password='1234', database='dbSensorData')
+dbClient =  InfluxDBClient(host='localhost',
+                           port=8086,
+                           username='ship',
+                           password='1234',
+                           database='dbData')
 
 def on_connect(clinet, userdata, flag, rc):
     print('Connect with result code : ' + str(rc))
@@ -23,7 +27,7 @@ def on_message(client, userdata, msg):
     dbClient.write_points(json_body)
 
 client = mqtt.Client()
-client.username_pw_set(username='mqtt_ship', password='1234')
+client.username_pw_set(username='ship', password='1234')
 
 client.on_connect = on_connect
 client.on_message = on_message
