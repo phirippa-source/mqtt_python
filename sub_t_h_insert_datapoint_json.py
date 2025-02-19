@@ -10,7 +10,7 @@ dbClient =  InfluxDBClient(host='localhost',
 
 def on_connect(clinet, userdata, flag, rc):
     print('Connect with result code : ' + str(rc))
-    clinet.subscribe('MyOffice/Outdoor/#')
+    clinet.subscribe('MyOffice/Outdoor/Value')
 
 def on_message(client, userdata, msg):
     print(msg.topic + ':' + str(msg.payload))
