@@ -11,7 +11,7 @@ ser.readline()
 while True:
   line = ser.readline().decode('utf-8')
   try:
-    client.publish('sensors', line[:-1])
+    client.publish('MyOffice/Indoor/Values', line[:-1])
     print('Topic:"sensors", Payload:', line[:-1])
   except:
     print('Error!')
