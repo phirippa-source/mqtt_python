@@ -12,9 +12,8 @@ def on_connect(clinet, userdata, flag, rc):
     clinet.subscribe('MyOffice/Outdoor/#')
 
 def on_message(client, userdata, msg):
-    print(msg.topic + ':' + str(msg.payload))
-
-    topic = msg.topic.split('/')
+    print(msg.topic + ':' + str(msg.payload))     # MyOffice/Outdoor/Temp 또는 MyOffice/Outdoor/Humi
+    topic = msg.topic.split('/')                  # topci --> ['MyOffice', 'Outdoor', 'Temp']
     json_body =[]
     data_point = { 'measurement':'sensors',
                     'tags':{'Location':'', 'SubLocation':''},
