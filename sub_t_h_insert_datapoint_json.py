@@ -32,8 +32,9 @@ def on_message(client, userdata, msg):
     data_point['tags']['SubLocation'] = sublocation
     data_point['fields']['Temp'] = payload['Temp']
     data_point['fields']['Humi'] = payload['Humi']
-
     json_body.append(data_point)
+  
+    print(f'Inserted: {json_body}', end='\n\n')
     dbClient.write_points(json_body)
 
 client = mqtt.Client()
@@ -41,6 +42,4 @@ client.username_pw_set(username='ship', password='1234')
 client.on_connect = on_connect
 client.on_message = on_message
 client.connect('localhost', 1883, 60)
-client.loop_forever( )
-
-
+client.loop_forever()
