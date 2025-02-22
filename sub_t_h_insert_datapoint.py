@@ -24,6 +24,8 @@ def on_message(client, userdata, msg):
     data_point['tags']['SubLocation'] = topic[1]
     data_point['fields'][topic[2]] = float(msg.payload)
     json_body.append(data_point)
+
+    print(f'Inserted: {json_body}', end='\n\n')
     dbClient.write_points(json_body)
 
 client = mqtt.Client()
