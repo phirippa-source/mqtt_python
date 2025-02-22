@@ -2,13 +2,10 @@ import serial
 import json
 
 ser = serial.Serial(port='/dev/ttyACM0', baudrate=9600)
-ser.readline()
 
 while True:
-  line = ser.readline().decode('utf-8')
+  line = ser.readline().decode('utf-8')[:-1]
   try:
-    dic = json.loads(line[:-1])
+    print("payload:", json.loads(line)
   except:
-    print('Error!')
-  else:
-    print(dic)
+    pass
