@@ -1,7 +1,7 @@
 import serial
 import json
 
-ser = serial.Serial(port='PORT', baudrate=9600)
+ser = serial.Serial(port='/dev/ttyACM0', baudrate=9600)
 ser.readline()
 
 while True:
