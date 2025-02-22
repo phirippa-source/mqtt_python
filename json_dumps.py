@@ -5,7 +5,7 @@ payload = {'Temp':24.5, 'Humi':66.0}
 
 print( type(payload) )        # <class 'dict'>
 print( payload['Temp'] )      # 24.5
-print( payload['Humi'] )     # 66.0
+print( payload['Humi'] )      # 66.0
 
 print()
 
