@@ -7,12 +7,14 @@ client.username_pw_set(username='ship', password='1234')
 ser = serial.Serial(port='PORT', baudrate=9600)
 topic = 'MyOffice/Indoor/Values'
 client.connect('localhost', 1883, 60)
-ser.readline()
 
 while True:
-  payload = ser.readline().decode('utf-8')[:-1]
+  line = ser.readline().decode('utf-8')[:-1]
   try:
-    client.publish(topic, payload)
-    print('Topic :',topic, 'Payload :', payload)
+    message = json.loads(line)
   except:
-    print('Error!')
+    pass
+  else:
+    payload = json.dumps(message)
+    client.publish(topic, payload)
+    print(f'Topic:{topic}\tPayload:{payload}')
