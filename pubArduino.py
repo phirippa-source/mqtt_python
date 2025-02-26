@@ -20,5 +20,5 @@ while True:
       # print("message:", message)
       for topic, payload in message.items():
         client.publish(topic, payload)
-        print(f'publishing - topic:{topic} \tpayload:{payload}')
+        print(f'publishing - topic:{topic}  \tpayload:{payload}')
       print()
