@@ -2,7 +2,7 @@ from influxdb import InfluxDBClient
 import time
 import random
 
-client = InfluxDBClient(host='localhost',port=8086,username='ship',password='1234',database='dbSensorData')
+client = InfluxDBClient(host='localhost',port=8086,username='ship',password='1234',database='dbData')
 
 def genRandomDataPoint():
     json_body=[]
