@@ -7,7 +7,7 @@ client.username_pw_set(username='ship', password='1234')
 client.connect('localhost', 1883, 60)
 topic = 'MyOffice/Indoor/Values'
 
-ser = serial.Serial(port='ttyACM0', baudrate=9600)
+ser = serial.Serial(port='/dev/ttyACM0', baudrate=9600)
 ser.readline()
 
 while True:
